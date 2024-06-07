@@ -196,7 +196,7 @@ def cal_accuracy(y_test, y_pred):
 def k_nearest_neighbor(df):
     
     X, y, X_train, X_test, y_train, y_test = splitdataset(df)
-    neighbors = np.arange(1, 11) # Return evenly spaced values within a given interval
+    neighbors = np.arange(1, 20) # Return evenly spaced values within a given interval
     
     # Return a new array of a given shape, without initializing entries:-
     train_accuracy = np.empty(len(neighbors))
@@ -280,7 +280,7 @@ def decision_tree(df):
 
 def auc_roc_curve(df):
     
-    model1 = KNeighborsClassifier(n_neighbors=3) # Classifier implementing the k-nearest neighbors vote
+    model1 = KNeighborsClassifier(n_neighbors=11) # Classifier implementing the k-nearest neighbors vote
     model2 = GaussianNB() # Gaussian Naive Bayes (GaussianNB) 
     model3 = SVC(kernel='linear', random_state=0, probability=True) # C-Support Vector Classification
     model4 = DecisionTreeClassifier(criterion = "gini", random_state = 100, max_depth = 3, min_samples_leaf = 5) # A decision tree classifier
